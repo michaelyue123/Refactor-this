@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "P8/QWlQ/4L46VHVjjOe0UEN74QZw5aPqMoDxoe9xC4UDfc/JPufA2XP7Rd+72WyYU92uynLBDuXTSieWJR/76Q==",
+  "success": true,
+  "projectFilePath": "/Users/reminiscence/Downloads/RefactorThis/RefactorThis.csproj",
+  "expectedPackageFiles": [
+    "/Users/reminiscence/.nuget/packages/microsoft.data.sqlite/6.0.1/microsoft.data.sqlite.6.0.1.nupkg.sha512",
+    "/Users/reminiscence/.nuget/packages/microsoft.data.sqlite.core/6.0.1/microsoft.data.sqlite.core.6.0.1.nupkg.sha512",
+    "/Users/reminiscence/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
+    "/Users/reminiscence/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.0.6/sqlitepclraw.bundle_e_sqlite3.2.0.6.nupkg.sha512",
+    "/Users/reminiscence/.nuget/packages/sqlitepclraw.core/2.0.6/sqlitepclraw.core.2.0.6.nupkg.sha512",
+    "/Users/reminiscence/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.0.6/sqlitepclraw.lib.e_sqlite3.2.0.6.nupkg.sha512",
+    "/Users/reminiscence/.nuget/packages/sqlitepclraw.provider.e_sqlite3/2.0.6/sqlitepclraw.provider.e_sqlite3.2.0.6.nupkg.sha512",
+    "/Users/reminiscence/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512"
+  ],
+  "logs": []
+}

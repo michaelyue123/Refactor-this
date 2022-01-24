@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{529176B5-F038-4745-A9B8-E87E9D226F6C}|Default">
+  <MonoDevelop.Ide.ItemProperties.RefactorThis PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/Product.cs">
+    <Files>
+      <File FileName="RefactorThis.csproj" Line="12" Column="1" />
+      <File FileName="Startup.cs" Line="25" Column="1" />
+      <File FileName="README.md" Line="73" Column="1" />
+      <File FileName="Controllers/ProductsController.cs" Line="14" Column="28" />
+      <File FileName="Models/Products.cs" Line="36" Column="2" />
+      <File FileName="Models/EmptyClass.cs" Line="22" Column="26" />
+      <File FileName="Models/EmptyClass.cs" Line="31" Column="19" />
+      <File FileName="Models/ProductOption.cs" Line="23" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="RefactorThis" expanded="True">
+            <Node name="RefactorThis" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Product.cs" selected="True" />
+              </Node>
+              <Node name="Properties" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
