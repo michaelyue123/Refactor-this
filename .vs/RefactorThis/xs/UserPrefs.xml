@@ -1,25 +1,23 @@
 ﻿<Properties StartupConfiguration="{529176B5-F038-4745-A9B8-E87E9D226F6C}|Default">
   <MonoDevelop.Ide.ItemProperties.RefactorThis PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Models/Product.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/ProductsController.cs">
     <Files>
-      <File FileName="RefactorThis.csproj" Line="12" Column="1" />
-      <File FileName="Startup.cs" Line="25" Column="1" />
-      <File FileName="README.md" Line="73" Column="1" />
-      <File FileName="Controllers/ProductsController.cs" Line="14" Column="28" />
-      <File FileName="Models/Products.cs" Line="36" Column="2" />
-      <File FileName="Models/EmptyClass.cs" Line="22" Column="26" />
-      <File FileName="Models/EmptyClass.cs" Line="31" Column="19" />
-      <File FileName="Models/ProductOption.cs" Line="23" Column="1" />
+      <File FileName="Startup.cs" Line="44" Column="8" />
+      <File FileName="Controllers/ProductsController.cs" Line="1" Column="5" />
+      <File FileName="Models/ProductOption.cs" Line="67" Column="1" />
+      <File FileName="Controllers/ProductController.cs" Line="9" Column="52" />
+      <File FileName="Controllers/ProductOptionsController.cs" Line="18" Column="1" />
+      <File FileName="Controllers/ProductOptionController.cs" Line="19" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="RefactorThis" expanded="True">
             <Node name="RefactorThis" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="Product.cs" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="ProductsController.cs" selected="True" />
               </Node>
+              <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
             </Node>
           </Node>
@@ -30,7 +28,9 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/reminiscence/Downloads/RefactorThis/README.md" relfile="README.md" line="28" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
