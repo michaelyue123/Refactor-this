@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using RefactorThis.Models;
 
@@ -8,10 +9,17 @@ namespace RefactorThis.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
+        private readonly Products products;
+
         [HttpGet]
         public Products Get()
         {
-            return new Products();
+            Products products = new();
+            if (products == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+            return products;
         }
     }
 }

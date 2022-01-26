@@ -1,3 +1,8 @@
+/Users/reminiscence/Downloads/RefactorThis/obj/Debug/netcoreapp5.0/RefactorThis.GeneratedMSBuildEditorConfig.editorconfig
+/Users/reminiscence/Downloads/RefactorThis/obj/Debug/netcoreapp5.0/RefactorThis.AssemblyInfoInputs.cache
+/Users/reminiscence/Downloads/RefactorThis/obj/Debug/netcoreapp5.0/RefactorThis.AssemblyInfo.cs
+/Users/reminiscence/Downloads/RefactorThis/obj/Debug/netcoreapp5.0/RefactorThis.csproj.CoreCompileInputs.cache
+/Users/reminiscence/Downloads/RefactorThis/obj/Debug/netcoreapp5.0/RefactorThis.MvcApplicationPartsAssemblyInfo.cache
 /Users/reminiscence/Downloads/RefactorThis/bin/Debug/netcoreapp5.0/appsettings.Development.json
 /Users/reminiscence/Downloads/RefactorThis/bin/Debug/netcoreapp5.0/appsettings.json
 /Users/reminiscence/Downloads/RefactorThis/bin/Debug/netcoreapp5.0/RefactorThis.deps.json
@@ -6,8 +11,11 @@
 /Users/reminiscence/Downloads/RefactorThis/bin/Debug/netcoreapp5.0/RefactorThis.dll
 /Users/reminiscence/Downloads/RefactorThis/bin/Debug/netcoreapp5.0/ref/RefactorThis.dll
 /Users/reminiscence/Downloads/RefactorThis/bin/Debug/netcoreapp5.0/RefactorThis.pdb
+/Users/reminiscence/Downloads/RefactorThis/bin/Debug/netcoreapp5.0/System.Net.Http.Formatting.dll
+/Users/reminiscence/Downloads/RefactorThis/bin/Debug/netcoreapp5.0/System.Web.Http.dll
 /Users/reminiscence/Downloads/RefactorThis/bin/Debug/netcoreapp5.0/Microsoft.Data.Sqlite.dll
 /Users/reminiscence/Downloads/RefactorThis/bin/Debug/netcoreapp5.0/Newtonsoft.Json.dll
+/Users/reminiscence/Downloads/RefactorThis/bin/Debug/netcoreapp5.0/Newtonsoft.Json.Bson.dll
 /Users/reminiscence/Downloads/RefactorThis/bin/Debug/netcoreapp5.0/SQLitePCLRaw.batteries_v2.dll
 /Users/reminiscence/Downloads/RefactorThis/bin/Debug/netcoreapp5.0/SQLitePCLRaw.core.dll
 /Users/reminiscence/Downloads/RefactorThis/bin/Debug/netcoreapp5.0/SQLitePCLRaw.provider.e_sqlite3.dll
@@ -26,12 +34,6 @@
 /Users/reminiscence/Downloads/RefactorThis/bin/Debug/netcoreapp5.0/runtimes/win-arm64/native/e_sqlite3.dll
 /Users/reminiscence/Downloads/RefactorThis/bin/Debug/netcoreapp5.0/runtimes/win-x64/native/e_sqlite3.dll
 /Users/reminiscence/Downloads/RefactorThis/bin/Debug/netcoreapp5.0/runtimes/win-x86/native/e_sqlite3.dll
-/Users/reminiscence/Downloads/RefactorThis/obj/Debug/netcoreapp5.0/RefactorThis.csproj.AssemblyReference.cache
-/Users/reminiscence/Downloads/RefactorThis/obj/Debug/netcoreapp5.0/RefactorThis.GeneratedMSBuildEditorConfig.editorconfig
-/Users/reminiscence/Downloads/RefactorThis/obj/Debug/netcoreapp5.0/RefactorThis.AssemblyInfoInputs.cache
-/Users/reminiscence/Downloads/RefactorThis/obj/Debug/netcoreapp5.0/RefactorThis.AssemblyInfo.cs
-/Users/reminiscence/Downloads/RefactorThis/obj/Debug/netcoreapp5.0/RefactorThis.csproj.CoreCompileInputs.cache
-/Users/reminiscence/Downloads/RefactorThis/obj/Debug/netcoreapp5.0/RefactorThis.MvcApplicationPartsAssemblyInfo.cache
 /Users/reminiscence/Downloads/RefactorThis/obj/Debug/netcoreapp5.0/staticwebassets/RefactorThis.StaticWebAssets.Manifest.cache
 /Users/reminiscence/Downloads/RefactorThis/obj/Debug/netcoreapp5.0/staticwebassets/RefactorThis.StaticWebAssets.xml
 /Users/reminiscence/Downloads/RefactorThis/obj/Debug/netcoreapp5.0/scopedcss/bundle/RefactorThis.styles.css

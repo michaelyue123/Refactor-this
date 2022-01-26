@@ -69,5 +69,10 @@ namespace RefactorThis.Models
             cmd.CommandText = $"delete from Products where id = '{Id}' collate nocase";
             cmd.ExecuteNonQuery();
         }
+
+        public static implicit operator Product(Products v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
