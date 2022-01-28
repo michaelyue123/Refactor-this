@@ -9,4 +9,14 @@
         <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
         <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.7" />
     </ItemGroup>
+    <ItemGroup>
+      <None Remove="Utilities\" />
+      <None Remove="Utilities\Exceptions\" />
+      <None Remove="Models\Repository\" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Utilities\" />
+      <Folder Include="Utilities\Exceptions\" />
+      <Folder Include="Models\Repository\" />
+    </ItemGroup>
 </Project>

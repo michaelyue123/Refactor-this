@@ -7,9 +7,9 @@ namespace RefactorThis.Controllers
     [Serializable]
     internal class HttpResponseException : Exception
     {
-        private HttpStatusCode notFound;
+        private readonly HttpStatusCode notFound;
 
-        public HttpResponseException()
+        public HttpResponseException(System.Net.Http.HttpResponseMessage resp)
         {
         }
 

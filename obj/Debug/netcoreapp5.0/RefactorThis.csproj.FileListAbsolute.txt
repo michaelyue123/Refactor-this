@@ -43,3 +43,4 @@
 /Users/reminiscence/Downloads/RefactorThis/obj/Debug/netcoreapp5.0/ref/RefactorThis.dll
 /Users/reminiscence/Downloads/RefactorThis/obj/Debug/netcoreapp5.0/RefactorThis.pdb
 /Users/reminiscence/Downloads/RefactorThis/obj/Debug/netcoreapp5.0/RefactorThis.genruntimeconfig.cache
+/Users/reminiscence/Downloads/RefactorThis/obj/Debug/netcoreapp5.0/RefactorThis.csproj.AssemblyReference.cache
