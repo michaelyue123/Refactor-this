@@ -19,10 +19,12 @@ namespace RefactorThis.Models.Repository
         // gets all products
         public async Task<IEnumerable<Product>> GetProducts()
         {
+            var result = await appDbContext.Products.ToListAsync();
+            Console.WriteLine("dasdasdsa",result);
             return await appDbContext.Products.ToListAsync();
         }
 
-        // gets all products
+        // gets all products by a specific name
         public async Task<IEnumerable<Product>> GetProductsByName(string name)
         {
             return await appDbContext.Products.Where(e => e.Name == name).ToListAsync();
@@ -38,6 +40,8 @@ namespace RefactorThis.Models.Repository
         // adds a new product
         public async Task<Product> AddProduct(Product product)
         {
+            product.Id = Guid.NewGuid();
+            //product.IsNew = true;
             var result = await appDbContext.Products.AddAsync(product);
             await appDbContext.SaveChangesAsync();
             return result.Entity;
@@ -48,6 +52,8 @@ namespace RefactorThis.Models.Repository
         {
             var result = await appDbContext.Products
                 .FirstOrDefaultAsync(e => e.Id == product.Id);
+
+            //result.IsNew = false;
 
             if (result != null)
             {
@@ -64,7 +70,7 @@ namespace RefactorThis.Models.Repository
         }
 
         // deletes a product and its options
-        public async void DeleteProduct(Guid productId)
+        public async Task<Product> DeleteProduct(Guid productId)
         {
             // delete product option associated with a specific product id
             await appDbContext.ProductOptions.ForEachAsync(async e =>
@@ -83,7 +89,10 @@ namespace RefactorThis.Models.Repository
             {
                 appDbContext.Products.Remove(result);
                 await appDbContext.SaveChangesAsync();
+                return result;
             }
+
+            return null;
         }
     }
 }

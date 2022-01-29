@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Net;
-using System.Net.Http;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RefactorThis.Models;
+using RefactorThis.Models.Repository;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,74 +13,103 @@ namespace RefactorThis.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        [HttpGet("{id}")]
-        public Product Get(Guid id)
+        private readonly IProductRepository productRepository;
+
+        public ProductController(IProductRepository productRepository)
         {
-            Product product = new(id);
+            this.productRepository = productRepository;
+        }
 
-            if (product == null)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Product>> GetProduct(Guid id)
+        {
+            try
             {
-                var resp = new HttpResponseMessage(HttpStatusCode.NotFound)
-                {
-                    Content = new StringContent(string.Format("No product with ID = {0}", id)),
-                    ReasonPhrase = "Product ID Not Found"
-                };
-                throw new HttpResponseException(resp);
+                var result = await productRepository.GetProduct(id);
+
+                //if (result.IsNew) throw new Exception();
+               
+                if (result == null) return NotFound();
+
+                return result;
             }
-
-            if (product.IsNew)
-                throw new Exception();
-
-            return product;
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    "Error retrieving data from the database");
+            }
         }
 
         [HttpPost]
-        public void Post(Product product)
+        public async Task<ActionResult<Product>> CreateProduct(Product product)
         {
-            product.Save();
+            try
+            {
+                if (product == null)
+                    return BadRequest();
+
+                // Add custom model validation error
+                var prod = productRepository.GetProduct(product.Id);
+
+                if(prod != null)
+                {
+                    ModelState.AddModelError("product id", "Product already exists.");
+                    return BadRequest(ModelState);
+                }
+
+                var createdProduct = await productRepository.AddProduct(product);
+
+                return CreatedAtAction(nameof(GetProduct),
+                    new { id = createdProduct.Id }, createdProduct);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    "Error creating new employee record");
+            }
         }
 
         [HttpPut("{id}")]
-        public void Update(Guid id, Product product)
+        public async Task<ActionResult<Product>> UpdateProduct(Guid id, Product product)
         {
-            Product prod = new(id)
+            try
             {
-                Name = product.Name,
-                Description = product.Description,
-                Price = product.Price,
-                DeliveryPrice = product.DeliveryPrice
-            };
+                if (id != product.Id)
+                    return BadRequest("Product ID mismatch");
 
-            if (prod == null)
-            {
-                var resp = new HttpResponseMessage(HttpStatusCode.NotFound)
-                {
-                    Content = new StringContent(string.Format("No product with ID = {0}", id)),
-                    ReasonPhrase = "Product ID Not Found"
-                };
-                throw new HttpResponseException(resp);
+                var productToUpdate = await productRepository.GetProduct(id);
+
+                if (productToUpdate == null)
+                    return NotFound($"Product with Id = {id} not found");
+
+                return await productRepository.UpdateProduct(product);
             }
-
-            if (!prod.IsNew)
-                prod.Save();
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    "Error updating data");
+            }
         }
 
         [HttpDelete("{id}")]
-        public void Delete(Guid id)
+        public async Task<ActionResult<Product>> Delete(Guid id)
         {
-            Product product = new(id);
-
-            if (product == null)
+            try
             {
-                var resp = new HttpResponseMessage(HttpStatusCode.NotFound)
-                {
-                    Content = new StringContent(string.Format("No product with ID = {0}", id)),
-                    ReasonPhrase = "Product ID Not Found"
-                };
-                throw new HttpResponseException(resp);
-            }
+                var prodcutToDelete = await productRepository.GetProduct(id);
 
-            product.Delete();
+                if (prodcutToDelete == null)
+                {
+                    return NotFound($"Product with Id = {id} not found");
+                }
+
+                return await productRepository.DeleteProduct(id);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    "Error deleting data");
+            }
         }
     }
 }

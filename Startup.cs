@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using RefactorThis.Data;
 using Microsoft.EntityFrameworkCore;
+using RefactorThis.Models.Repository;
 
 namespace RefactorThis
 {
@@ -26,6 +27,10 @@ namespace RefactorThis
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
             services.AddEntityFrameworkSqlite().AddDbContext<AppDbContext>();
+
+            services.AddScoped<IProductRepository, ProductRepository>();
+
+            services.AddScoped<IProductOptionRepository, ProductOptionRepository>();
 
             services.AddControllers();
         }

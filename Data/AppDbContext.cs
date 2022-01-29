@@ -17,6 +17,7 @@ namespace RefactorThis.Data
         {
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlite("Data Source=App_Data/products.db");
+            //optionsBuilder.EnableSensitiveDataLogging();
         }
     }
 }

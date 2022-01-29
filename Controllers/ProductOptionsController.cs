@@ -1,7 +1,11 @@
 ﻿using System;
-using System.Net;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RefactorThis.Models;
+using RefactorThis.Models.Repository;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,15 +15,25 @@ namespace RefactorThis.Controllers
     [ApiController]
     public class ProductOptionsController : ControllerBase
     {
-        [HttpGet("{productId}/options")]
-        public ProductOptions GetOptions(Guid productId)
+        private readonly IProductOptionRepository productOptionRepository;
+
+        public ProductOptionsController(IProductOptionRepository productOptionRepository)
         {
-            ProductOptions options = new(productId);
-            if (options == null)
+            this.productOptionRepository = productOptionRepository;
+        }
+
+        [HttpGet("{productId}/options")]
+        public async Task<ActionResult<IEnumerable<ProductOption>>> GetOptions(Guid productId)
+        {
+            try
             {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return (await productOptionRepository.GetProductOptions(productId)).ToList();
             }
-            return options;
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    "Error retrieving data from the database");
+            }
         }
     }
 }

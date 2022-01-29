@@ -61,7 +61,7 @@ namespace RefactorThis.Models.Repository
         }
 
         // deletes the specified product option
-        public async void DeleteProductOption(Guid optionId)
+        public async Task<ProductOption> DeleteProductOption(Guid optionId)
         {
             var result = await appDbContext.ProductOptions
                 .FirstOrDefaultAsync(e => e.Id == optionId);
@@ -70,7 +70,10 @@ namespace RefactorThis.Models.Repository
             {
                 appDbContext.ProductOptions.Remove(result);
                 await appDbContext.SaveChangesAsync();
+                return result;
             }
+
+            return null;
         }
     }
 }

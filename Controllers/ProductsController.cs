@@ -1,5 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using RefactorThis.Models;
+using RefactorThis.Models.Repository;
 
 namespace RefactorThis.Controllers
 {
@@ -7,16 +13,39 @@ namespace RefactorThis.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        [HttpGet]
-        public Products Get()
+        private readonly IProductRepository productRepository;
+
+        public ProductsController(IProductRepository productRepository)
         {
-            return new Products();
+            this.productRepository = productRepository;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
+        {
+            try
+            {
+                return (await productRepository.GetProducts()).ToList();
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    "Error retrieving data from the database");
+            }
         }
 
         [HttpGet("GetByName/{name}")]
-        public Products Get(string name)
+        public async Task<ActionResult<IEnumerable<Product>>> GetProductsByName(string name)
         {
-            return new Products(name);
+            try
+            {
+                return (await productRepository.GetProductsByName(name)).ToList();
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    "Error retrieving data from the database");
+            }
         }
     }
 }

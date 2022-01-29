@@ -7,9 +7,10 @@ namespace RefactorThis.Models.Repository
     public interface IProductRepository
     {
         Task<IEnumerable<Product>> GetProducts();
+        Task<IEnumerable<Product>> GetProductsByName(string name);
         Task<Product> GetProduct(Guid productId);
         Task<Product> AddProduct(Product product);
         Task<Product> UpdateProduct(Product product);
-        void DeleteProduct(Guid productId);
+        Task<Product> DeleteProduct(Guid productId);
     }
 }

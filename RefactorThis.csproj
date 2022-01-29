@@ -17,9 +17,11 @@
       <None Remove="EntityFramework" />
       <None Remove="Microsoft.EntityFrameworkCore" />
       <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
+      <None Remove="Services\" />
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Data\" />
       <Folder Include="Models\Repository\" />
+      <Folder Include="Services\" />
     </ItemGroup>
 </Project>

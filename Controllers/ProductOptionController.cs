@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Net;
-using System.Net.Http;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RefactorThis.Models;
+using RefactorThis.Models.Repository;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,85 +13,105 @@ namespace RefactorThis.Controllers
     [ApiController]
     public class ProductOptionController : ControllerBase
     {
-        [HttpGet("{productId}/options/{id}")]
-        public ProductOption GetOption(Guid productId, Guid id)
+        private readonly IProductOptionRepository productOptionRepository;
+
+        public ProductOptionController(IProductOptionRepository productOptionRepository)
         {
-            ProductOption option = new(id);
+            this.productOptionRepository = productOptionRepository;
+        }
 
-            if (option == null)
+        [HttpGet("{productId}/options/{optionId}")]
+        public async Task<ActionResult<ProductOption>> GetOption(Guid productId, Guid optionId)
+        {
+            try
             {
-                var resp = new HttpResponseMessage(HttpStatusCode.NotFound)
-                {
-                    Content = new StringContent(string.Format("No product with ID = {0}", id)),
-                    ReasonPhrase = "ID Not Found"
-                };
-                throw new HttpResponseException(resp);
-            }
+                var result = await productOptionRepository.GetProductOption(productId, optionId);
 
-            if (option.ProductId != productId)
+                //if (result.IsNew) throw new Exception();
+
+                if (result == null) return NotFound();
+
+                return result;
+            }
+            catch (Exception)
             {
-                var resp = new HttpResponseMessage(HttpStatusCode.NotFound)
-                {
-                    Content = new StringContent(string.Format("No product option with ID = {0}", productId)),
-                    ReasonPhrase = "Product ID Not Found"
-                };
-                throw new HttpResponseException(resp);
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    "Error retrieving data from the database");
             }
-
-            if (option.IsNew)
-                throw new Exception();
-
-            return option;
         }
 
         [HttpPost("{productId}/options")]
-        public void CreateOption(Guid productId, ProductOption option)
+        public async Task<ActionResult<ProductOption>> CreateOption(Guid productId, ProductOption option)
         {
-            option.ProductId = productId;
-            option.Save();
+            try
+            {
+                if (option == null)
+                    return BadRequest();
+
+                // Add custom model validation error
+                var prodOpt = productOptionRepository.GetProductOption(productId, option.Id);
+
+                if (prodOpt != null)
+                {
+                    ModelState.AddModelError("product option id", "Product option already exists.");
+                    return BadRequest(ModelState);
+                }
+
+                var createdProductOption = await productOptionRepository.AddProductOption(productId, option);
+
+                return CreatedAtAction(nameof(GetOption),
+                    new { id = createdProductOption.Id }, createdProductOption);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    "Error creating new employee record");
+            }
         }
 
-        [HttpPut("{productId}/options/{id}")]
-        public void UpdateOption(Guid id, ProductOption option)
+
+
+        [HttpPut("{productId}/options/{optionId}")]
+        public async Task<ActionResult<ProductOption>> UpdateOption(Guid optionId, ProductOption option)
         {
-            ProductOption opt = new(id)
+            try
             {
-                Name = option.Name,
-                Description = option.Description
-            };
+                if (optionId != option.Id)
+                    return BadRequest("Product Option ID mismatch");
 
-            if (opt == null)
-            {
-                var resp = new HttpResponseMessage(HttpStatusCode.NotFound)
-                {
-                    Content = new StringContent(string.Format("No product with ID = {0}", id)),
-                    ReasonPhrase = "ID Not Found"
-                };
-                throw new HttpResponseException(resp);
+                var optionToUpdate = await productOptionRepository.GetProductOption(option.ProductId, optionId);
+
+                if (optionToUpdate == null)
+                    return NotFound($"Product option with Id = {optionId} not found");
+
+                return await productOptionRepository.UpdateProductOption(optionId,option);
             }
-
-            if (!opt.IsNew)
-                opt.Save();
-            else
-                throw new HttpResponseException(HttpStatusCode.InternalServerError);
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    "Error updating data");
+            }
         }
 
-        [HttpDelete("{productId}/options/{id}")]
-        public void DeleteOption(Guid id)
+        [HttpDelete("{productId}/options/{optionId}")]
+        public async Task<ActionResult<ProductOption>> DeleteOption(Guid productId, Guid optionId)
         {
-            ProductOption opt = new(id);
-
-            if (opt == null)
+            try
             {
-                var resp = new HttpResponseMessage(HttpStatusCode.NotFound)
-                {
-                    Content = new StringContent(string.Format("No product option with ID = {0}", id)),
-                    ReasonPhrase = "ID Not Found"
-                };
-                throw new HttpResponseException(resp);
-            }
+                var optionToDelete = await productOptionRepository.GetProductOption(productId, optionId);
 
-            opt.Delete();
+                if (optionToDelete == null)
+                {
+                    return NotFound($"Product option with Id = {optionId} not found");
+                }
+
+                return await productOptionRepository.DeleteProductOption(optionId);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    "Error deleting data");
+            }
         }
     }
 }
