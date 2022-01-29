@@ -44,12 +44,6 @@
 /Users/reminiscence/Downloads/RefactorThis/obj/Debug/netcoreapp5.0/RefactorThis.pdb
 /Users/reminiscence/Downloads/RefactorThis/obj/Debug/netcoreapp5.0/RefactorThis.genruntimeconfig.cache
 /Users/reminiscence/Downloads/RefactorThis/obj/Debug/netcoreapp5.0/RefactorThis.csproj.AssemblyReference.cache
-/Users/reminiscence/Project/Refactor-this/obj/Debug/netcoreapp5.0/RefactorThis.csproj.AssemblyReference.cache
-/Users/reminiscence/Project/Refactor-this/obj/Debug/netcoreapp5.0/RefactorThis.GeneratedMSBuildEditorConfig.editorconfig
-/Users/reminiscence/Project/Refactor-this/obj/Debug/netcoreapp5.0/RefactorThis.AssemblyInfoInputs.cache
-/Users/reminiscence/Project/Refactor-this/obj/Debug/netcoreapp5.0/RefactorThis.AssemblyInfo.cs
-/Users/reminiscence/Project/Refactor-this/obj/Debug/netcoreapp5.0/RefactorThis.csproj.CoreCompileInputs.cache
-/Users/reminiscence/Project/Refactor-this/obj/Debug/netcoreapp5.0/RefactorThis.MvcApplicationPartsAssemblyInfo.cache
 /Users/reminiscence/Project/Refactor-this/bin/Debug/netcoreapp5.0/appsettings.Development.json
 /Users/reminiscence/Project/Refactor-this/bin/Debug/netcoreapp5.0/appsettings.json
 /Users/reminiscence/Project/Refactor-this/bin/Debug/netcoreapp5.0/RefactorThis.deps.json
@@ -86,6 +80,11 @@
 /Users/reminiscence/Project/Refactor-this/bin/Debug/netcoreapp5.0/runtimes/win-arm64/native/e_sqlite3.dll
 /Users/reminiscence/Project/Refactor-this/bin/Debug/netcoreapp5.0/runtimes/win-x64/native/e_sqlite3.dll
 /Users/reminiscence/Project/Refactor-this/bin/Debug/netcoreapp5.0/runtimes/win-x86/native/e_sqlite3.dll
+/Users/reminiscence/Project/Refactor-this/obj/Debug/netcoreapp5.0/RefactorThis.GeneratedMSBuildEditorConfig.editorconfig
+/Users/reminiscence/Project/Refactor-this/obj/Debug/netcoreapp5.0/RefactorThis.AssemblyInfoInputs.cache
+/Users/reminiscence/Project/Refactor-this/obj/Debug/netcoreapp5.0/RefactorThis.AssemblyInfo.cs
+/Users/reminiscence/Project/Refactor-this/obj/Debug/netcoreapp5.0/RefactorThis.csproj.CoreCompileInputs.cache
+/Users/reminiscence/Project/Refactor-this/obj/Debug/netcoreapp5.0/RefactorThis.MvcApplicationPartsAssemblyInfo.cache
 /Users/reminiscence/Project/Refactor-this/obj/Debug/netcoreapp5.0/staticwebassets/RefactorThis.StaticWebAssets.Manifest.cache
 /Users/reminiscence/Project/Refactor-this/obj/Debug/netcoreapp5.0/staticwebassets/RefactorThis.StaticWebAssets.xml
 /Users/reminiscence/Project/Refactor-this/obj/Debug/netcoreapp5.0/scopedcss/bundle/RefactorThis.styles.css

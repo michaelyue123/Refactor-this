@@ -4,9 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 using RefactorThis.Data;
-using Microsoft.EntityFrameworkCore;
 using RefactorThis.Models.Repository;
 
 namespace RefactorThis

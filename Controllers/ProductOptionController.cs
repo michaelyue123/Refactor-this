@@ -49,13 +49,13 @@ namespace RefactorThis.Controllers
                     return BadRequest();
 
                 // Add custom model validation error
-                var prodOpt = productOptionRepository.GetProductOption(productId, option.Id);
+                //var prodOpt = productOptionRepository.GetProductOption(productId, option.Id);
 
-                if (prodOpt != null)
-                {
-                    ModelState.AddModelError("product option id", "Product option already exists.");
-                    return BadRequest(ModelState);
-                }
+                //if (prodOpt != null)
+                //{
+                //    ModelState.AddModelError("product option id", "Product option already exists.");
+                //    return BadRequest(ModelState);
+                //}
 
                 var createdProductOption = await productOptionRepository.AddProductOption(productId, option);
 

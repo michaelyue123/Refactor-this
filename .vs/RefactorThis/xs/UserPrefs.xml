@@ -1,27 +1,21 @@
 ﻿<Properties StartupConfiguration="{529176B5-F038-4745-A9B8-E87E9D226F6C}|Default">
   <MonoDevelop.Ide.ItemProperties.RefactorThis PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Models/Helpers.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/Product.cs">
     <Files>
       <File FileName="Data/AppDbContext.cs" Line="24" Column="1" />
-      <File FileName="Models/Product.cs" Line="35" Column="12" />
+      <File FileName="Models/Product.cs" Line="20" Column="43" />
       <File FileName="appsettings.json" Line="9" Column="1" />
-      <File FileName="Models/Repository/ProductRepository.cs" Line="54" Column="34" />
-      <File FileName="Controllers/ProductController.cs" Line="87" Column="53" />
-      <File FileName="Models/Repository/IProductRepository.cs" Line="13" Column="23" />
-      <File FileName="Models/Repository/IProductOptionRepository.cs" Line="11" Column="29" />
-      <File FileName="Models/ProductOption.cs" Line="72" Column="12" />
-      <File FileName="Models/Repository/ProductOptionRepository.cs" Line="41" Column="14" />
-      <File FileName="Controllers/ProductOptionController.cs" Line="49" Column="16" />
-      <File FileName="Program.cs" Line="1" Column="1" />
-      <File FileName="Startup.cs" Line="30" Column="1" />
-      <File FileName="Controllers/ProductOptionsController.cs" Line="17" Column="38" />
-      <File FileName="Models/ProductOptions.cs" Line="10" Column="34" />
-      <File FileName="Models/Products.cs" Line="8" Column="59" />
-      <File FileName="App_Data/products.db" />
-      <File FileName="App_Data/products.db-wal" />
-      <File FileName="App_Data/products.db-shm" Line="1" Column="1" />
-      <File FileName="Controllers/ProductsController.cs" Line="50" Column="6" />
-      <File FileName="Models/Helpers.cs" Line="1" Column="1" />
+      <File FileName="Models/Repository/ProductRepository.cs" Line="36" Column="1" />
+      <File FileName="Controllers/ProductController.cs" Line="61" Column="1" />
+      <File FileName="Models/Repository/IProductRepository.cs" Line="11" Column="23" />
+      <File FileName="Models/Repository/IProductOptionRepository.cs" Line="9" Column="42" />
+      <File FileName="Models/ProductOption.cs" Line="23" Column="1" />
+      <File FileName="Models/Repository/ProductOptionRepository.cs" Line="44" Column="1" />
+      <File FileName="Controllers/ProductOptionController.cs" Line="59" Column="1" />
+      <File FileName="Program.cs" Line="10" Column="1" />
+      <File FileName="Startup.cs" Line="29" Column="73" />
+      <File FileName="Controllers/ProductOptionsController.cs" Line="30" Column="65" />
+      <File FileName="Controllers/ProductsController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -32,7 +26,7 @@
               <Node name="Data" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="Repository" expanded="True" />
-                <Node name="Helpers.cs" selected="True" />
+                <Node name="Product.cs" selected="True" />
               </Node>
             </Node>
           </Node>

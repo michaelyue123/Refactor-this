@@ -8,9 +8,9 @@ namespace RefactorThis.Models.Repository
     {
         Task<IEnumerable<Product>> GetProducts();
         Task<IEnumerable<Product>> GetProductsByName(string name);
-        Task<Product> GetProduct(Guid productId);
+        Task<Product> GetProduct(Guid id);
         Task<Product> AddProduct(Product product);
         Task<Product> UpdateProduct(Product product);
-        Task<Product> DeleteProduct(Guid productId);
+        Task<Product> DeleteProduct(Guid id);
     }
 }

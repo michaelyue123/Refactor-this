@@ -48,14 +48,16 @@ namespace RefactorThis.Controllers
                 if (product == null)
                     return BadRequest();
 
-                // Add custom model validation error
-                var prod = productRepository.GetProduct(product.Id);
+                //Add custom model validation error
+               //var prod = productRepository.GetProduct(product.Id);
 
-                if(prod != null)
-                {
-                    ModelState.AddModelError("product id", "Product already exists.");
-                    return BadRequest(ModelState);
-                }
+               // Console.WriteLine("dasdasdsada", prod);
+
+               // if (prod != null)
+               // {
+               //     ModelState.AddModelError("product id", "Product already exists.");
+               //     return BadRequest(ModelState);
+               // }
 
                 var createdProduct = await productRepository.AddProduct(product);
 
@@ -92,7 +94,7 @@ namespace RefactorThis.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Product>> Delete(Guid id)
+        public async Task<ActionResult<Product>> DeleteProduct(Guid id)
         {
             try
             {

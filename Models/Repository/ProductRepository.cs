@@ -19,8 +19,6 @@ namespace RefactorThis.Models.Repository
         // gets all products
         public async Task<IEnumerable<Product>> GetProducts()
         {
-            var result = await appDbContext.Products.ToListAsync();
-            Console.WriteLine("dasdasdsa",result);
             return await appDbContext.Products.ToListAsync();
         }
 
@@ -31,16 +29,15 @@ namespace RefactorThis.Models.Repository
         }
 
         // gets the project that matches the specified ID
-        public async Task<Product> GetProduct(Guid productId)
+        public async Task<Product> GetProduct(Guid id)
         {
-            return await appDbContext.Products
-                .FirstOrDefaultAsync(e => e.Id == productId);
+            return await appDbContext.Products.FindAsync(id);
         }
 
         // adds a new product
         public async Task<Product> AddProduct(Product product)
         {
-            product.Id = Guid.NewGuid();
+            //product.Id = Guid.NewGuid();
             //product.IsNew = true;
             var result = await appDbContext.Products.AddAsync(product);
             await appDbContext.SaveChangesAsync();
@@ -70,12 +67,12 @@ namespace RefactorThis.Models.Repository
         }
 
         // deletes a product and its options
-        public async Task<Product> DeleteProduct(Guid productId)
+        public async Task<Product> DeleteProduct(Guid id)
         {
             // delete product option associated with a specific product id
             await appDbContext.ProductOptions.ForEachAsync(async e =>
             {
-                if(e != null && e.ProductId == productId)
+                if(e != null && e.ProductId == id)
                 {
                     appDbContext.ProductOptions.Remove(e);
                     await appDbContext.SaveChangesAsync();
@@ -83,7 +80,7 @@ namespace RefactorThis.Models.Repository
             });
 
             var result = await appDbContext.Products
-                .FirstOrDefaultAsync(e => e.Id == productId);
+                .FirstOrDefaultAsync(e => e.Id == id);
 
             if (result != null)
             {

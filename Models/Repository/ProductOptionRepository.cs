@@ -19,7 +19,7 @@ namespace RefactorThis.Models.Repository
         // gets all options for a specified product id
         public async Task<IEnumerable<ProductOption>> GetProductOptions(Guid productId)
         {
-            return await appDbContext.ProductOptions.Where(e => e.Id == productId).ToListAsync();
+            return await appDbContext.ProductOptions.Where(e => e.ProductId == productId).ToListAsync();
         }
 
         // gets the specified product option for the specified product.

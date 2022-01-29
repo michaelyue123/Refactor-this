@@ -34,7 +34,7 @@ namespace RefactorThis.Controllers
             }
         }
 
-        [HttpGet("GetByName/{name}")]
+        [HttpGet("byname/{name}")]
         public async Task<ActionResult<IEnumerable<Product>>> GetProductsByName(string name)
         {
             try
