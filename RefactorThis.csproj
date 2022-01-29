@@ -2,21 +2,24 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp5.0</TargetFramework>
+        <GenerateErrorForMissingTargetingPacks>false</GenerateErrorForMissingTargetingPacks>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="Microsoft.Data.Sqlite" Version="6.0.1" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-        <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.7" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.2" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.2" />
     </ItemGroup>
     <ItemGroup>
-      <None Remove="Utilities\" />
-      <None Remove="Utilities\Exceptions\" />
+      <None Remove="Data\" />
       <None Remove="Models\Repository\" />
+      <None Remove="EntityFramework" />
+      <None Remove="Microsoft.EntityFrameworkCore" />
+      <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Utilities\" />
-      <Folder Include="Utilities\Exceptions\" />
+      <Folder Include="Data\" />
       <Folder Include="Models\Repository\" />
     </ItemGroup>
 </Project>

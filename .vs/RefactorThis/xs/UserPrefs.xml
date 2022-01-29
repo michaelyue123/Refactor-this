@@ -1,34 +1,38 @@
 ﻿<Properties StartupConfiguration="{529176B5-F038-4745-A9B8-E87E9D226F6C}|Default">
   <MonoDevelop.Ide.ItemProperties.RefactorThis PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Models/Repository/ProductsRepo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="App_Data/products.db">
     <Files>
-      <File FileName="Models/Repository/ProductOptionRepo.cs" Line="45" Column="50" />
-      <File FileName="Controllers/ProductOptionController.cs" Line="33" Column="46" />
-      <File FileName="Models/ProductOption.cs" Line="13" Column="19" />
-      <File FileName="Models/Product.cs" Line="10" Column="1" />
+      <File FileName="Data/AppDbContext.cs" Line="24" Column="1" />
+      <File FileName="Models/Product.cs" Line="4" Column="1" />
+      <File FileName="appsettings.json" Line="9" Column="1" />
+      <File FileName="Models/Repository/ProductRepository.cs" Line="31" Column="58" />
+      <File FileName="Controllers/ProductController.cs" Line="51" Column="15" />
+      <File FileName="Models/Repository/IProductRepository.cs" Line="17" Column="1" />
+      <File FileName="Models/Repository/IProductOptionRepository.cs" Line="16" Column="1" />
+      <File FileName="Models/ProductOption.cs" Line="52" Column="21" />
+      <File FileName="Models/Repository/ProductOptionRepository.cs" Line="40" Column="48" />
+      <File FileName="Controllers/ProductOptionController.cs" Line="59" Column="49" />
+      <File FileName="Program.cs" Line="1" Column="1" />
+      <File FileName="Startup.cs" Line="31" Column="10" />
+      <File FileName="Controllers/ProductOptionsController.cs" Line="17" Column="38" />
+      <File FileName="Models/ProductOptions.cs" Line="31" Column="14" />
       <File FileName="Models/Products.cs" Line="1" Column="1" />
-      <File FileName="Controllers/ProductController.cs" Line="42" Column="28" />
-      <File FileName="Models/Repository/ProductRepo.cs" Line="63" Column="25" />
-      <File FileName="Controllers/ProductOptionsController.cs" Line="29" Column="1" />
-      <File FileName="Controllers/ProductsController.cs" Line="1" Column="1" />
-      <File FileName="Models/ProductOptions.cs" Line="7" Column="18" />
-      <File FileName="Models/Repository/ProductOptionsRepo.cs" Line="10" Column="66" />
-      <File FileName="Models/Helpers.cs" Line="14" Column="2" />
-      <File FileName="Models/Repository/ProductsRepo.cs" Line="10" Column="25" />
+      <File FileName="App_Data/products.db" />
+      <File FileName="App_Data/products.db-wal" />
+      <File FileName="App_Data/products.db-shm" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="RefactorThis" expanded="True">
             <Node name="RefactorThis" expanded="True">
-              <Node name="App_Data" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="Repository" expanded="True">
-                  <Node name="ProductsRepo.cs" selected="True" />
-                </Node>
+              <Node name="App_Data" expanded="True">
+                <Node name="products.db" selected="True" />
               </Node>
-              <Node name="Utilities" expanded="True">
-                <Node name="Exceptions" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Repository" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -37,10 +41,13 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>RefactorThis.Tests/RefactorThis.Tests.csproj</String>
+  </DisabledProjects>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/reminiscence/Downloads/RefactorThis/README.md" relfile="README.md" line="28" column="1" />
+      <Breakpoint file="/Users/reminiscence/Project/Refactor-this/README.md" relfile="README.md" line="28" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

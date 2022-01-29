@@ -1,7 +1,5 @@
-﻿using System.Net;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using RefactorThis.Models;
-using RefactorThis.Models.Repository;
 
 namespace RefactorThis.Controllers
 {
@@ -9,21 +7,16 @@ namespace RefactorThis.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        readonly ProductsRepo _productsRepo = new();
-        // get all products
         [HttpGet]
         public Products Get()
         {
-            Products products = _productsRepo.Get(null);
-            return products;
+            return new Products();
         }
 
-        // get all products matching 
-        [HttpGet("{name}")]
+        [HttpGet("GetByName/{name}")]
         public Products Get(string name)
         {
-            Products products = _productsRepo.Get(name);
-            return products;
+            return new Products(name);
         }
     }
 }

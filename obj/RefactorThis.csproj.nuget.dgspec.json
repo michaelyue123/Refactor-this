@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/reminiscence/Downloads/RefactorThis/RefactorThis.csproj": {}
+    "/Users/reminiscence/Project/Refactor-this/RefactorThis.csproj": {}
   },
   "projects": {
-    "/Users/reminiscence/Downloads/RefactorThis/RefactorThis.csproj": {
+    "/Users/reminiscence/Project/Refactor-this/RefactorThis.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/reminiscence/Downloads/RefactorThis/RefactorThis.csproj",
+        "projectUniqueName": "/Users/reminiscence/Project/Refactor-this/RefactorThis.csproj",
         "projectName": "RefactorThis",
-        "projectPath": "/Users/reminiscence/Downloads/RefactorThis/RefactorThis.csproj",
+        "projectPath": "/Users/reminiscence/Project/Refactor-this/RefactorThis.csproj",
         "packagesPath": "/Users/reminiscence/.nuget/packages/",
-        "outputPath": "/Users/reminiscence/Downloads/RefactorThis/obj/",
+        "outputPath": "/Users/reminiscence/Project/Refactor-this/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/reminiscence/.config/NuGet/NuGet.Config"
@@ -38,13 +38,17 @@
         "net5.0": {
           "targetAlias": "netcoreapp5.0",
           "dependencies": {
-            "Microsoft.AspNet.WebApi.Core": {
-              "target": "Package",
-              "version": "[5.2.7, )"
-            },
             "Microsoft.Data.Sqlite": {
               "target": "Package",
               "version": "[6.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.2, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
