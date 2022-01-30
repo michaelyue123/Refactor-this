@@ -21,5 +21,8 @@ namespace RefactorThis.Models
 
         [Required]
         public decimal DeliveryPrice { get; set; }
+
+        //[JsonIgnore]
+        //public bool IsNew { get; set; }
     }
 }

@@ -31,14 +31,13 @@ namespace RefactorThis.Models.Repository
         // gets the project that matches the specified ID
         public async Task<Product> GetProduct(Guid id)
         {
-            return await appDbContext.Products.FindAsync(id);
+            var result = await appDbContext.Products.FindAsync(id);
+            return result;
         }
 
         // adds a new product
         public async Task<Product> AddProduct(Product product)
         {
-            //product.Id = Guid.NewGuid();
-            //product.IsNew = true;
             var result = await appDbContext.Products.AddAsync(product);
             await appDbContext.SaveChangesAsync();
             return result.Entity;
@@ -49,8 +48,6 @@ namespace RefactorThis.Models.Repository
         {
             var result = await appDbContext.Products
                 .FirstOrDefaultAsync(e => e.Id == product.Id);
-
-            //result.IsNew = false;
 
             if (result != null)
             {

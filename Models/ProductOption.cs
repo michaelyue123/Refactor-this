@@ -6,8 +6,10 @@ namespace RefactorThis.Models
 {
     public class ProductOption
     {
+        [Required]
         public Guid Id { get; set; }
 
+        [Required]
         public Guid ProductId { get; set; }
 
         [Required]

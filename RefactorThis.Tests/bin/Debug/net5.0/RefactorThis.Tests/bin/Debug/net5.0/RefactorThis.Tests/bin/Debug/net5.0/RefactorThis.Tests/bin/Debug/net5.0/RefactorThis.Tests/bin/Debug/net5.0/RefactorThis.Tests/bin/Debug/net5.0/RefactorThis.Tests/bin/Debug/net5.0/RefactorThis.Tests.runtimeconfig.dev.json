@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/Users/reminiscence/.dotnet/store/|arch|/|tfm|",
+      "/Users/reminiscence/.nuget/packages"
+    ]
+  }
+}

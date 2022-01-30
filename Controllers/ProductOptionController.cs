@@ -27,9 +27,10 @@ namespace RefactorThis.Controllers
             {
                 var result = await productOptionRepository.GetProductOption(productId, optionId);
 
-                //if (result.IsNew) throw new Exception();
-
-                if (result == null) return NotFound();
+                if (result == null)
+                {
+                    return NotFound($"Product option with Id = {optionId} not found");
+                }
 
                 return result;
             }
@@ -46,16 +47,7 @@ namespace RefactorThis.Controllers
             try
             {
                 if (option == null)
-                    return BadRequest();
-
-                // Add custom model validation error
-                //var prodOpt = productOptionRepository.GetProductOption(productId, option.Id);
-
-                //if (prodOpt != null)
-                //{
-                //    ModelState.AddModelError("product option id", "Product option already exists.");
-                //    return BadRequest(ModelState);
-                //}
+                    return BadRequest("Product Option does not exist");
 
                 var createdProductOption = await productOptionRepository.AddProductOption(productId, option);
 

@@ -27,10 +27,11 @@ namespace RefactorThis.Controllers
             {
                 var result = await productRepository.GetProduct(id);
 
-                //if (result.IsNew) throw new Exception();
-               
-                if (result == null) return NotFound();
-
+                if (result == null)
+                {
+                    NotFound($"Product with Id = {id} not found");
+                }
+                
                 return result;
             }
             catch (Exception)
@@ -46,18 +47,7 @@ namespace RefactorThis.Controllers
             try
             {
                 if (product == null)
-                    return BadRequest();
-
-                //Add custom model validation error
-               //var prod = productRepository.GetProduct(product.Id);
-
-               // Console.WriteLine("dasdasdsada", prod);
-
-               // if (prod != null)
-               // {
-               //     ModelState.AddModelError("product id", "Product already exists.");
-               //     return BadRequest(ModelState);
-               // }
+                    return BadRequest("Product does not exist");
 
                 var createdProduct = await productRepository.AddProduct(product);
 

@@ -1,33 +1,11 @@
 ﻿using System;
-using System.Net;
-using System.Runtime.Serialization;
 
 namespace RefactorThis.Controllers
 {
-    [Serializable]
-    internal class HttpResponseException : Exception
+    public class HttpResponseException : Exception
     {
-        private readonly HttpStatusCode notFound;
+        public int Status { get; set; } = 500;
 
-        public HttpResponseException(System.Net.Http.HttpResponseMessage resp)
-        {
-        }
-
-        public HttpResponseException(HttpStatusCode notFound)
-        {
-            this.notFound = notFound;
-        }
-
-        public HttpResponseException(string message) : base(message)
-        {
-        }
-
-        public HttpResponseException(string message, Exception innerException) : base(message, innerException)
-        {
-        }
-
-        protected HttpResponseException(SerializationInfo info, StreamingContext context) : base(info, context)
-        {
-        }
+        public object Value { get; set; }
     }
 }
