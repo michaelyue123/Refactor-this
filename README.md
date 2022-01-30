@@ -40,8 +40,8 @@ interface IProductOptionRepository
     Task<ProductOption> DeleteProductOption(Guid optionId);
 }
 
-ProductRepository:  IProductRepository
-ProductOptionRepository : IProductOptionRepository
+Class ProductRepository : IProductRepository
+Class ProductOptionRepository : IProductOptionRepository
 ```
 
 ## Split Giant Controller 
