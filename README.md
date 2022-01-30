@@ -20,7 +20,6 @@ and easier to manage as heavy-lifting api logics are managed by different repos 
 repo class is extended from its parent interface to make sure api funtions well-structured and organised.
 
 ```
-
 interface IProductRepository
 {
     Task<IEnumerable<Product>> GetProducts();
@@ -59,40 +58,3 @@ reasons, I could not pass these unit tests, I still decide to keep it as the evi
 
 ## Limitation
 There is still a lot of space for improvement. I am open to any constructive advice. :) 
-
-**Products:**
-```
-{
-  "Items": [
-    {
-      // product
-    },
-    {
-      // product
-    }
-  ]
-}
-```
-
-**Product Option:**
-```
-{
-  "Id": "01234567-89ab-cdef-0123-456789abcdef",
-  "Name": "Product name",
-  "Description": "Product description"
-}
-```
-
-**Product Options:**
-```
-{
-  "Items": [
-    {
-      // product option
-    },
-    {
-      // product option
-    }
-  ]
-}
-```
